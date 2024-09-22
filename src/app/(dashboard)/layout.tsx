@@ -14,7 +14,7 @@ export default function DashboardLayout({
       <div className="w-[14%] md:w-[28%] lg:w-[21%] xl:w-[17%] bg-slate-100 px-1 md:px-7">
         <Link
           href={"/"}
-          className="flex items-center justify-center md:justify-start pt-3 pb-7 gap-3 "
+          className="no-underline flex items-center justify-center md:justify-start pt-3 pb-7 gap-3 "
         >
           <Image
             src={"/images/school-logo.svg"}
@@ -22,7 +22,7 @@ export default function DashboardLayout({
             height={35}
             alt={"school-logo"}
           />
-          <span className="hidden md:block">Opi-arabia</span>
+          <span className="hidden md:block font-bold ">Opi-arabia</span>
         </Link>
         <Menu />
       </div>

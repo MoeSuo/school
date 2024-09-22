@@ -47,9 +47,15 @@ export const EventCalendar = () => {
           />
         </div>
         {events.map((event) => (
-          <div className="px-3 border-solid rounded-lg border-2 border-gray-100 border-t-4 odd:border-t-darkpink even:border-t-darkyellow" key={event.id}>
-            <h2>{event.title}</h2>
-            <p>{event.description}</p>
+          <div
+            className="px-3 border-solid rounded-lg border-2 border-gray-100 border-t-4 odd:border-t-darkpink even:border-t-darkyellow"
+            key={event.id}
+          >
+            <div className="flex flex-col items-start justify-between">
+              <h2 className="text-xl font-semibold mb-1 ">{event.title}</h2>
+              <span className="text-xs text-gray-300   ">{event.time}</span>
+            </div>
+            <p className="text-sm text-gray-400">{event.description}</p>
           </div>
         ))}
       </div>

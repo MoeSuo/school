@@ -32,7 +32,7 @@ const CountChart = () => {
           src={"/images/icons/more.svg"}
           alt="more"
           width={21}
-          height={7}
+          height={21}
           className="cursor-pointer"
         />
       </div>
