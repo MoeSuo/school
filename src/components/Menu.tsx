@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { role } from "@/lib/data";
 const menuItems = [
   {
     title: "MENU",
@@ -122,7 +123,9 @@ const Menu = () => {
       {menuItems.map((item) => (
         <div className="text-sm gap-1 flex flex-col " key={item.title}>
           <span className="flex justify-center md:justify-start py-2">{item.title}</span>
-          {item.items.map((i) => (
+          {item.items.map((i) => {
+            if(i.visible.includes(role)){
+              return  (
             <Link
               key={i.label}
               href={i.href}
@@ -131,7 +134,9 @@ const Menu = () => {
               <Image src={i.icon} width={20} height={20} alt={i.label} />
               <p className="hidden md:block">{i.label}</p>
             </Link>
-          ))}
+          )
+            }
+          })}
         </div>
       ))}
     </div>
