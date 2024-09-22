@@ -13,7 +13,7 @@ const Navbar = () => {
           alt="search"
           className="opacity-30 ml-3"
         />
-        <input type="text" placeholder="Search..." className="w-[200px] p-3 bg-transparent outline-none" />
+        <input type="text" placeholder="Search..." className="w-[200px] p-3 bg-transparent outline-none border-none" />
       </div>
       {/* User icons */}
       <div className="flex items-center gap-5 justify-end w-full">
