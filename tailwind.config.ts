@@ -18,6 +18,7 @@ const config: Config = {
         darkpink: "#F2B5D4",
         softyellow: "#fbce77",
         darkyellow: "#f7b970",
+        softgray: "#f1f5f9",
       },
     },
   },
