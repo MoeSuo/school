@@ -11,6 +11,13 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        darkcyan: "#90E3F4",
+        softcyan: "#B2F7EF",
+        softgreen: "#EFF7F6",
+        softpink: "#F7D6E0",
+        darkpink: "#F2B5D4",
+        softyellow: "#fbce77",
+        darkyellow: "#f7b970",
       },
     },
   },

@@ -120,13 +120,13 @@ const Menu = () => {
   return (
     <div>
       {menuItems.map((item) => (
-        <div className="text-sm gap-2 flex flex-col " key={item.title}>
+        <div className="text-sm gap-1 flex flex-col " key={item.title}>
           <span className="flex justify-center md:justify-start py-2">{item.title}</span>
           {item.items.map((i) => (
             <Link
               key={i.label}
               href={i.href}
-              className="flex gap-3 justify-center md:justify-start py-2 bg-slate-50 rounded-sm shadow-sm text-gray-500 hover:text-gray-900"
+              className="flex gap-3 justify-center md:justify-start py-1 hover:bg-slate-50 rounded-sm shadow-sm text-gray-500 hover:text-gray-900"
             >
               <Image src={i.icon} width={20} height={20} alt={i.label} />
               <p className="hidden md:block">{i.label}</p>

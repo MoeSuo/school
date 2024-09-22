@@ -8,8 +8,8 @@ const Navbar = () => {
       <div className="hidden md:flex items-center gap-3 text-xs rounded-full ring-[1.5px] ring-gray-300">
         <Image
           src={"/images/icons/search.svg"}
-          width={28}
-          height={28}
+          width={21}
+          height={21}
           alt="search"
           className="opacity-30 ml-3"
         />
@@ -20,16 +20,16 @@ const Navbar = () => {
         <div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">
           <Image
             src={"/images/icons/messages.svg"}
-            width={28}
-            height={28}
+            width={21}
+            height={21}
             alt="search"
           />
         </div>
         <div className="relative bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">
           <Image
             src={"/images/icons/announcements.svg"}
-            width={28}
-            height={28}
+            width={21}
+            height={21}
             alt="search"
           />
           <div className="absolute -top-3 -right-3 w-5 h-5 justify-center items-center bg-purple-500 rounded-full flex text-white text-xs">3</div>
