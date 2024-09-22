@@ -27,7 +27,7 @@ const CountChart = () => {
     <div className="rounded-xl bg-white w-full h-full p-3">
       {/* TITLE */}
       <div className="flex gap-3 justify-between flex-wrap">
-        <h1>Students</h1>
+        <h1 className="text-lg font-semibold">Students</h1>
         <Image
           src={"/images/icons/more.svg"}
           alt="more"
