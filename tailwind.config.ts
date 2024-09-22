@@ -1,11 +1,20 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  // mui start
+  corePlugins: {
+    // Remove the Tailwind CSS preflight styles so it can use Material UI's preflight instead (CssBaseline).
+    preflight: false,
+  },
+  // mui end
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  important: '#root', // mui
+  // important: '#__next', // mui
   theme: {
     extend: {
       colors: {

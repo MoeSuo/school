@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
+// import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
+import {
+  StyledEngineProvider,
+  ThemeProvider,
+} from "@mui/material/styles";
+import CssBaseline from '@mui/material/CssBaseline';
 import { Inter } from "next/font/google";
 import "./globals.css";
+import theme from "@/theme";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,9 +23,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {children}
+      {/* <AppRouterCacheProvider options={{ enableCssLayer: true, key: "css" }}> */}
+        <body id="root" className={inter.className}>
+          {/* <AppRouterCacheProvider> */}
+            <StyledEngineProvider injectFirst>
+              <ThemeProvider theme={theme}>
+              <CssBaseline />
+              {children}
+              </ThemeProvider>
+            </StyledEngineProvider>
+          {/* </AppRouterCacheProvider> */}
         </body>
+      {/* </AppRouterCacheProvider> */}
     </html>
   );
 }
