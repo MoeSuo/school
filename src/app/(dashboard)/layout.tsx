@@ -1,6 +1,8 @@
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import Menu from "@/components/Menu";
+import Navbar from "@/components/Navbar";
 
 const poppins = Poppins({
     weight: '400',
@@ -18,17 +20,18 @@ export default function DashboardLayout({
    
       <div className={`${poppins.className} h-screen flex  `}>
         {/* LEFT PANEL */}
-        <div className="w-[14%] md:w-[7%] lg:w-[14%] bg-sky-100">
-          <Link href={"/"} className="flex items-center justify-center gap-3">
+        <div className="w-[14%] md:w-[28%] lg:w-[21%] xl:w-[17%] bg-slate-100 px-1 md:px-7">
+          <Link href={"/"} className="flex items-center justify-center md:justify-start pt-3 pb-7 gap-3 ">
           <Image src={"/images/school-logo.svg"} width={35} height={35} alt={"school-logo"} />
-          <span className="hidden lg:block">Opi-arabia</span>
+          <span className="hidden md:block">Opi-arabia</span>
           </Link>
+          <Menu />
         </div>
         {/* RIGHT PANEL */}
-        <div className="w-[86%] md:w-[93%] lg:w-[86%] bg-sky-300">
-          RIGHT PANEL
-        </div>
+        <div className="w-[86%] md:w-[72%] lg:w-[79%] xl:w-[83%] bg-slate-300 overflow-scroll">
+          <Navbar />
         {children}
+        </div>
         </div>
   );
 }
