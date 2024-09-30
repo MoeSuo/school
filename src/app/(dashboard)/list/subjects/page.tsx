@@ -49,7 +49,7 @@ const SubjectsList = () => {
           <Link href={`/list/students/${item.id}`}>
             <Button className="w-7 h-7 flex items-center justify-center rounded-full bg-softcyan">
               <Image
-                src="/images/icons/view.svg"
+                src="/images/icons/edit.svg"
                 alt=""
                 width={16}
                 height={16}

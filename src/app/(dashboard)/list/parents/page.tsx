@@ -17,8 +17,8 @@ type Parent = {
 };
 const columns = [
   {
-    header: "Info",
-    accessor: "info",
+    header: "Email",
+    accessor: "email",
   },
   {
     header: "Student Names",
@@ -59,7 +59,7 @@ const ParentList = () => {
           <Link href={`/list/students/${item.id}`}>
             <Button className="w-7 h-7 flex items-center justify-center rounded-full bg-softcyan">
               <Image
-                src="/images/icons/view.svg"
+                src="/images/icons/edit.svg"
                 alt=""
                 width={16}
                 height={16}
@@ -67,7 +67,7 @@ const ParentList = () => {
             </Button>
           </Link>
           {role === "admin" && (
-            <Button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
+            <Button className="w-7 h-7 flex items-center justify-center rounded-full">
               <Image
                 src="/images/icons/delete.svg"
                 alt=""
@@ -75,7 +75,6 @@ const ParentList = () => {
                 height={16}
               />
             </Button>
-            // <FormModal table="teacher" type="delete" id={item.id} />
           )}
         </div>
       </td>

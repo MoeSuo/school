@@ -1,88 +1,57 @@
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import { TableSearch } from "@/components/TableSearch";
-import { role, teachersData } from "@/lib/data";
+import { lessonsData, role } from "@/lib/data";
 import { Button } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-type Teacher = {
+type Lesson = {
   id: number;
-  teacherId: string;
-  name: string;
-  email?: string;
-  photo: string;
-  phone: string;
-  subjects: string[];
-  classes: string[];
-  address: string;
+  subject: string;
+  class?: string;
+  teacher: string;
 };
 const columns = [
-  {
-    header: "Info",
-    accessor: "info",
-  },
-  {
-    header: "Teacher ID",
-    accessor: "teacherId",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "Subjects",
-    accessor: "subjects",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "Classes",
-    accessor: "classes",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "Phone",
-    accessor: "phone",
-    className: "hidden lg:table-cell",
-  },
-  {
-    header: "Address",
-    accessor: "address",
-    className: "hidden lg:table-cell",
-  },
-  {
-    header: "Actions",
-    accessor: "action",
-  },
-];
 
-const TeacherList = () => {
-  const tableRowData = (item: Teacher) => (
+    {
+      header: "Subject name",
+      accessor: "name",
+    },
+    {
+      header: "Class",
+      accessor: "class",
+      className: "hidden md:table-cell",
+    },
+    {
+      header: "Teacher",
+      accessor: "teacher",
+      className: "hidden md:table-cell",
+    },
+    {
+      header: "Actions",
+      accessor: "action",
+    },
+  ];
+
+const ClassesList = () => {
+  const tableRowData = (item: Lesson) => (
     <tr key={item.id} 
     className="  even:bg-slate-50 text-sm ">
       <td className="flex gap-5 my-3">
-        <Image
-          src={item.photo}
-          width={40}
-          height={40}
-          alt="search"
-          className="md:hidden xl:block w-11 h-11 rounded-full object-cover"
-        />
-        <div className="flex flex-col justify-start ">
-        <h3 className="text-xs font-semibold  my-0">{item.name}</h3>
-        <p className="text-xs text-gray-500  my-0">{item.email}</p>
-        </div>
+         <div className="flex flex-col justify-start ">
+        <h3 className="text-xs font-semibold  my-0">{item.subject}</h3>
+        </div> 
       </td>
-      <td className="hidden md:table-cell ">{item.teacherId}</td>
-      <td className="hidden md:table-cell ">{item.subjects.join(",")}</td>
-      <td className="hidden md:table-cell ">{item.classes.join(",")}</td>
-      <td className="hidden md:table-cell ">{item.phone}</td>
-      <td className="hidden md:table-cell ">{item.address}</td>
-
+      <td className="hidden md:table-cell ">{item.class}</td>
+      <td className="hidden md:table-cell ">{item.teacher}</td>
       <td>
         <div className="flex items-center gap-2">
           <Link href={`/list/teachers/${item.id}`}>
             <Button className="w-7 h-7 flex items-center justify-center rounded-full bg-softcyan">
               <Image
-                src="/images/icons/view.svg"
+                src="/images/icons/edit.svg"
                 alt=""
                 width={16}
                 height={16}
@@ -145,7 +114,7 @@ const TeacherList = () => {
       </div>
 
       {/* MIDDLE SECTION */}
-      <Table columns={columns} tableRowData={tableRowData} data={teachersData} />
+      <Table columns={columns} tableRowData={tableRowData} data={lessonsData} />
 
  
       {/* BOTTOM SECTION */}
@@ -154,4 +123,4 @@ const TeacherList = () => {
   );
 };
 
-export default TeacherList;
+export default ClassesList;

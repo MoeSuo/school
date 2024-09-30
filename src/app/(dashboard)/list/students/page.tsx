@@ -91,7 +91,6 @@ const StudentList = () => {
                 height={16}
               />
             </Button>
-            // <FormModal table="teacher" type="delete" id={item.id} />
           )}
         </div>
       </td>
