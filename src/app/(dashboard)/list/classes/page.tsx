@@ -78,7 +78,7 @@ const ClassesList = () => {
     <div className="bg-white p-7 rounded-lg flex-1 m-3 mt-0 ">
       {/* TOP SECTION */}
       <div className="flex flex-col md:flex-row md:items-center items-end justify-between  bg-sky-50 p-3 rounded-lg">
-        <h1 className="hidden md:block text-lg font-semibold">All Teachers</h1>
+        <h1 className="hidden md:block text-lg font-semibold">All Classes</h1>
         <div className="flex gap-3 flex-col md:flex-row  w-full md:w-auto ">
           <TableSearch />
 
