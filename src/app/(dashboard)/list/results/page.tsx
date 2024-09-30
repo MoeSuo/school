@@ -1,33 +1,44 @@
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import { TableSearch } from "@/components/TableSearch";
-import { assignmentsData, role } from "@/lib/data";
+import { resultsData, role } from "@/lib/data";
 import { Button } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-type Assignment = {
+type Result = {
   id: number;
   subject: string;
-  class?: string;
+  class: string;
   teacher: string;
-  dueDate: string;
+  student: string;
+  date: string;
+  type: string;
+  score: number;
 };
 const columns = [
-
     {
-      header: "Subject name",
+      header: "Subject Name",
       accessor: "name",
     },
     {
-      header: "Class",
-      accessor: "class",
+      header: "Student",
+      accessor: "student",
+    },
+    {
+      header: "Score",
+      accessor: "score",
       className: "hidden md:table-cell",
     },
     {
       header: "Teacher",
       accessor: "teacher",
+      className: "hidden md:table-cell",
+    },
+    {
+      header: "Class",
+      accessor: "class",
       className: "hidden md:table-cell",
     },
     {
@@ -40,9 +51,10 @@ const columns = [
       accessor: "action",
     },
   ];
+  
 
-const AssignmentsList = () => {
-  const tableRowData = (item: Assignment) => (
+const ResultsList = () => {
+  const tableRowData = (item: Result) => (
     <tr key={item.id} 
     className="  even:bg-slate-50 text-sm ">
       <td className="flex gap-5 my-3">
@@ -50,9 +62,11 @@ const AssignmentsList = () => {
         <h3 className="text-xs font-semibold  my-0">{item.subject}</h3>
         </div> 
       </td>
-      <td className="hidden md:table-cell ">{item.class}</td>
+      <td className=" md:table-cell ">{item.student}</td>
+      <td className="hidden md:table-cell ">{item.score}</td>
       <td className="hidden md:table-cell ">{item.teacher}</td>
-      <td className="hidden md:table-cell ">{item.dueDate}</td>
+      <td className="hidden md:table-cell ">{item.class}</td>
+      <td className="hidden md:table-cell ">{item.date}</td>
       <td>
         <div className="flex items-center gap-2">
           <Link href={`/list/teachers/${item.id}`}>
@@ -77,14 +91,12 @@ const AssignmentsList = () => {
   return (
     <div className="bg-white p-7 rounded-lg flex-1 m-3 mt-0 ">
       {/* TOP SECTION */}
-      <div className="flex  flex-col md:flex-row md:items-center items-end justify-between  bg-sky-50 p-3 rounded-lg">
-        <h1 className="hidden md:block text-lg font-semibold">All Assignments</h1>
-        <div className="flex gap-3 flex-col md:flex-row  w-full md:w-auto  ">
-         <div>
-         <TableSearch />
-         </div>
+      <div className="flex flex-col md:flex-row md:items-center items-end justify-between  bg-sky-50 p-3 rounded-lg">
+        <h1 className="hidden md:block text-lg font-semibold">All Results</h1>
+        <div className="flex gap-3 flex-col md:flex-row  w-full md:w-auto ">
+          <TableSearch />
 
-          <div className="flex items-center gap-3 self-end ">
+          <div className="flex items-center gap-3 self-end">
             <Button
               variant="contained"
               className="w-7 h-9 flex items-center justify-center rounded-full bg-darkyellow"
@@ -123,7 +135,7 @@ const AssignmentsList = () => {
       </div>
 
       {/* MIDDLE SECTION */}
-      <Table columns={columns} tableRowData={tableRowData} data={assignmentsData} />
+      <Table columns={columns} tableRowData={tableRowData} data={resultsData} />
 
  
       {/* BOTTOM SECTION */}
@@ -132,4 +144,4 @@ const AssignmentsList = () => {
   );
 };
 
-export default AssignmentsList;
+export default ResultsList;
