@@ -252,8 +252,8 @@ export const parentsData = [
   {
     id: 1,
     name: "John Doe",
-    students: ["Sarah Brewer"],
     email: "john@doe.com",
+    students: ["Sarah Brewer"],
     phone: "1234567890",
     address: "123 Main St, Anytown, USA",
   },
