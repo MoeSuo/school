@@ -5,7 +5,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const Pagination = () => {
   return (
-    <div className="gap-3 flex flex-col md:flex-row items-center justify-between text-gray-500 ">
+    <div className="mt-7 gap-3 flex flex-col md:flex-row items-center justify-between text-gray-500 ">
       <Button
         disabled
         startIcon={<ArrowBackIosIcon />}
