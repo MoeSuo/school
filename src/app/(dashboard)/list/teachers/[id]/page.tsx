@@ -5,10 +5,10 @@ const SingleTeacherpage = () => {
   return (
     <div className="flex-1 p-7 flex flex-col xl:flex-row">
       {/* LEFT */}
-      <div className="w-full xl:w-2/3 bg-sky-50 gap-7 flex flex-col">
+      <div className="w-full xl:w-2/3 gap-7 flex flex-col">
         {/* TOP SECTION */}
         <div className="flex gap-7 flex-col lg:flex-row">
-          <div className="lg:w-1/2 flex items-center bg-sky-100 gap-3 p-3 rounded-lg">
+          <div className="lg:w-1/2 flex items-center  gap-3 p-3 rounded-lg">
             <div className="flex w-1/3">
               <Image
                 src="/images/icons/userprofile.svg"
@@ -19,7 +19,7 @@ const SingleTeacherpage = () => {
               />
             </div>
             <div className="flex flex-col w-2/3 p-3">
-              <h1 className="m-0"> Name </h1>
+              <h1 className="m-0 text-[1.4rem] "> Teacher Name </h1>
               <p className="text-sm text-gray-500">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
                 quibusdam consectetur, repudiandae.
@@ -72,7 +72,59 @@ const SingleTeacherpage = () => {
               </div>
             </div>
           </div>
-          <div className="bg-sky-200 lg:w-1/2">Teacher 4 small cards</div>
+          <div className="lg:w-1/2 flex flex-wrap justify-between items-center gap-3 p-3">
+            <div className="flex items-start bg-sky-50 p-3  rounded-xl gap-3 w-full md:w-[48%] ">
+                <Image
+                src="/images/icons/percentage.svg"
+                alt=""
+                width={21}
+                height={21}
+              />
+              <div className="flex flex-col">
+                <p className="m-0 p-0 font-semibold">90%</p>
+                <p className="m-0 p-0 text-sm">Attendance</p>
+              </div>
+            </div>
+            <div className="flex items-start bg-sky-50 p-3  rounded-xl gap-3 w-full md:w-[48%] ">
+                <Image
+                src="/images/icons/branches.svg"
+                alt=""
+                width={21}
+                height={21}
+              />
+              <div className="flex flex-col">
+                <p className="m-0 p-0 font-semibold">70%</p>
+                <p className="m-0 p-0 text-sm">Branches</p>
+              </div>
+            </div>
+            <div className="flex items-start bg-sky-50 p-3  rounded-xl gap-3 w-full md:w-[48%] ">
+                <Image
+                src="/images/icons/lessons.svg"
+                alt=""
+                width={21}
+                height={21}
+              />
+              <div className="flex flex-col">
+                <p className="m-0 p-0 font-semibold">80%</p>
+                <p className="m-0 p-0 text-sm">Lessons</p>
+              </div>
+            </div>
+            <div className="flex items-start bg-sky-50 p-3  rounded-xl gap-3 w-full md:w-[48%] ">
+                <Image
+                src="/images/icons/classes.svg"
+                alt=""
+                width={21}
+                height={21}
+              />
+              <div className="flex flex-col">
+                <p className="m-0 p-0 font-semibold">7</p>
+                <p className="m-0 p-0 text-sm">Classes</p>
+              </div>
+            </div>
+            
+            
+            
+          </div>
         </div>
         {/* BOTTOM SECTION */}
         <div className="flex">
