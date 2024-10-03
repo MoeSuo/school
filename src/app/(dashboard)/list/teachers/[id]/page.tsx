@@ -1,14 +1,15 @@
+import BigCalendar from "@/components/BigCalendar";
 import Image from "next/image";
 import React from "react";
 
 const SingleTeacherpage = () => {
   return (
-    <div className="flex-1 p-7 flex flex-col xl:flex-row">
+    <div className="flex-1 p-7 flex flex-col xl:flex-row gap-3">
       {/* LEFT */}
-      <div className="w-full xl:w-2/3 gap-7 flex flex-col">
+      <div className="w-full xl:w-2/3 gap-7 flex flex-col ">
         {/* TOP SECTION */}
-        <div className="flex gap-7 flex-col lg:flex-row">
-          <div className="lg:w-1/2 flex items-center  gap-3 p-3 rounded-lg">
+        <div className="flex gap-7 flex-col lg:flex-row bg-white  rounded-lg" >
+          <div className="lg:w-1/2 flex items-center  rounded-lg bg-sky-100">
             <div className="flex w-1/3">
               <Image
                 src="/images/icons/userprofile.svg"
@@ -72,7 +73,7 @@ const SingleTeacherpage = () => {
               </div>
             </div>
           </div>
-          <div className="lg:w-1/2 flex flex-wrap justify-between items-center gap-3 p-3">
+          <div className="lg:w-1/2 flex flex-wrap justify-between items-center gap-3 lg:gap-0 p-3">
             <div className="flex items-start bg-sky-50 p-3  rounded-xl gap-3 w-full md:w-[48%] ">
                 <Image
                 src="/images/icons/percentage.svg"
@@ -127,9 +128,10 @@ const SingleTeacherpage = () => {
           </div>
         </div>
         {/* BOTTOM SECTION */}
-        <div className="flex">
-          <div className="bg-sky-100 w-full">Teacher scedule</div>
-        </div>
+          <div className="bg-white rounded-lg w-full h-[700px] p-3">
+            <h2>Your Schedule</h2>
+            <BigCalendar />
+          </div>
       </div>
       {/* RIGHT */}
       <div className="w-full xl:w-1/3 bg-sky-100">Right</div>
