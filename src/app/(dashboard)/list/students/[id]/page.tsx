@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const SingleTeacherpage = () => {
+const SingleStudentPage = () => {
   return (
     <div className="flex-1 p-7 flex flex-col xl:flex-row gap-3 ">
       {/* LEFT */}
@@ -15,7 +15,7 @@ const SingleTeacherpage = () => {
           <div className="lg:w-1/2 flex items-center  rounded-lg bg-sky-100 p-3">
             <div className="flex w-1/3">
               <Image
-                src="https://cdn.pixabay.com/photo/2016/03/27/17/42/man-1283235_1280.jpg"
+                src="https://thispersondoesnotexist.com/"
                 alt=""
                 width={135}
                 height={135}
@@ -23,7 +23,7 @@ const SingleTeacherpage = () => {
               />
             </div>
             <div className="flex flex-col w-2/3 p-3">
-              <h1 className="m-0 text-[1.4rem] "> Teacher Name </h1>
+              <h1 className="m-0 text-[1.4rem] "> Student Name </h1>
               <p className="text-sm text-gray-500">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
                 quibusdam consectetur, repudiandae.
@@ -97,8 +97,8 @@ const SingleTeacherpage = () => {
                 height={21}
               />
               <div className="flex flex-col">
-                <p className="m-0 p-0 font-semibold">70%</p>
-                <p className="m-0 p-0 text-sm">Branches</p>
+                <p className="m-0 p-0 font-semibold">6th </p>
+                <p className="m-0 p-0 text-sm">Grade</p>
               </div>
             </div>
             <div className="flex items-start bg-sky-50 p-3  rounded-xl gap-3 w-full md:w-[48%] ">
@@ -122,7 +122,7 @@ const SingleTeacherpage = () => {
               />
               <div className="flex flex-col">
                 <p className="m-0 p-0 font-semibold">7</p>
-                <p className="m-0 p-0 text-sm">Classes</p>
+                <p className="m-0 p-0 text-sm">Class name</p>
               </div>
             </div>
           </div>
@@ -140,19 +140,19 @@ const SingleTeacherpage = () => {
           <h1 className="text-xl font-semibold">Quick Links</h1>
           <div className="mt-7 flex gap-4 flex-wrap text-xs text-gray-500">
             <Link className="p-3 rounded-md bg-yellow-50" href={`/`}>
-              Teacher&apos;s Classes
+              Student&apos;s Lessons
             </Link>
             <Link className="p-3 rounded-md bg-pink-50" href={`/`}>
-              Teacher&apos;s Students
+              Student&apos;s Teachers
             </Link>
             <Link className="p-3 rounded-md bg-yellow-50" href={`/`}>
-              Teacher&apos;s Lessons
+              Student&apos;s Results
             </Link>
             <Link className="p-3 rounded-md bg-pink-50" href={`/`}>
-              Teacher&apos;s Exams
+              Student&apos;s Exams
             </Link>
             <Link className="p-3 rounded-md bg-yellow-50" href={`/`}>
-              Teacher&apos;s Assignments
+              Student&apos;s Assignments
             </Link>
           </div>
         </div>
@@ -163,4 +163,4 @@ const SingleTeacherpage = () => {
   );
 };
 
-export default SingleTeacherpage;
+export default SingleStudentPage;
