@@ -4,7 +4,7 @@ import React from "react";
 
 const SingleTeacherpage = () => {
   return (
-    <div className="flex-1 p-7 flex flex-col xl:flex-row gap-3">
+    <div className="flex-1 p-7 flex flex-col xl:flex-row gap-3 ">
       {/* LEFT */}
       <div className="w-full xl:w-2/3 gap-7 flex flex-col ">
         {/* TOP SECTION */}
