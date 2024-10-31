@@ -1,10 +1,10 @@
+import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import { TableSearch } from "@/components/TableSearch";
 import { lessonsData, role } from "@/lib/data";
 import { Button } from "@mui/material";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 type Lesson = {
@@ -14,54 +14,40 @@ type Lesson = {
   teacher: string;
 };
 const columns = [
-
-    {
-      header: "Subject name",
-      accessor: "name",
-    },
-    {
-      header: "Class",
-      accessor: "class",
-      className: "hidden md:table-cell",
-    },
-    {
-      header: "Teacher",
-      accessor: "teacher",
-      className: "hidden md:table-cell",
-    },
-    {
-      header: "Actions",
-      accessor: "action",
-    },
-  ];
+  {
+    header: "Subject name",
+    accessor: "name",
+  },
+  {
+    header: "Class",
+    accessor: "class",
+    className: "hidden md:table-cell",
+  },
+  {
+    header: "Teacher",
+    accessor: "teacher",
+    className: "hidden md:table-cell",
+  },
+  {
+    header: "Actions",
+    accessor: "action",
+  },
+];
 
 const ClassesList = () => {
   const tableRowData = (item: Lesson) => (
-    <tr key={item.id} 
-    className="  even:bg-slate-50 text-sm ">
+    <tr key={item.id} className="  even:bg-slate-50 text-sm ">
       <td className="flex gap-5 my-3">
-         <div className="flex flex-col justify-start ">
-        <h3 className="text-xs font-semibold  my-0">{item.subject}</h3>
-        </div> 
+        <div className="flex flex-col justify-start ">
+          <h3 className="text-xs font-semibold  my-0">{item.subject}</h3>
+        </div>
       </td>
       <td className="hidden md:table-cell ">{item.class}</td>
       <td className="hidden md:table-cell ">{item.teacher}</td>
       <td>
         <div className="flex items-center gap-2">
-          <Link href={`/list/teachers/${item.id}`}>
-            <Button className="w-7 h-7 flex items-center justify-center rounded-full bg-softcyan">
-              <Image
-                src="/images/icons/edit.svg"
-                alt=""
-                width={16}
-                height={16}
-              />
-            </Button>
-          </Link>
           {role === "admin" && (
-           <Button className="w-7 h-7 flex items-center justify-center rounded-full ">
-             <Image src="/images/icons/delete.svg" alt="" width={16} height={16} />
-           </Button>
+            <><FormModal table="lesson" type="update" data={item.id} /><FormModal table="lesson" type="delete" id={item.id} /></>
           )}
         </div>
       </td>
@@ -98,17 +84,9 @@ const ClassesList = () => {
                 height={21}
               />
             </Button>
-            {role ==="admin"  && <Button
-              variant="contained"
-              className="w-7 h-9 flex items-center justify-center rounded-full bg-darkyellow"
-            >
-              <Image
-                src={"/images/icons/plus.svg"}
-                alt="filter-icon"
-                width={21}
-                height={21}
-              />
-            </Button>}
+            {role === "admin" && 
+            <FormModal table="lesson" type="create" />
+            }
           </div>
         </div>
       </div>
@@ -116,7 +94,6 @@ const ClassesList = () => {
       {/* MIDDLE SECTION */}
       <Table columns={columns} tableRowData={tableRowData} data={lessonsData} />
 
- 
       {/* BOTTOM SECTION */}
       <Pagination />
     </div>

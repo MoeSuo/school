@@ -1,3 +1,4 @@
+import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import { TableSearch } from "@/components/TableSearch";
@@ -56,8 +57,7 @@ const columns = [
 
 const TeacherList = () => {
   const tableRowData = (item: Teacher) => (
-    <tr key={item.id} 
-    className="  even:bg-slate-50 text-sm ">
+    <tr key={item.id} className="  even:bg-slate-50 text-sm ">
       <td className="flex gap-5 my-3">
         <Image
           src={item.photo}
@@ -67,8 +67,8 @@ const TeacherList = () => {
           className="md:hidden xl:block w-11 h-11 rounded-full object-cover"
         />
         <div className="flex flex-col justify-start ">
-        <h3 className="text-xs font-semibold  my-0">{item.name}</h3>
-        <p className="text-xs text-gray-500  my-0">{item.email}</p>
+          <h3 className="text-xs font-semibold  my-0">{item.name}</h3>
+          <p className="text-xs text-gray-500  my-0">{item.email}</p>
         </div>
       </td>
       <td className="hidden md:table-cell ">{item.teacherId}</td>
@@ -90,9 +90,15 @@ const TeacherList = () => {
             </Button>
           </Link>
           {role === "admin" && (
-           <Button className="w-7 h-7 flex items-center justify-center rounded-full ">
-             <Image src="/images/icons/delete.svg" alt="" width={16} height={16} />
-           </Button>
+            // <Button className="w-7 h-7 flex items-center justify-center rounded-full ">
+            //   <Image
+            //     src="/images/icons/delete.svg"
+            //     alt=""
+            //     width={16}
+            //     height={16}
+            //   />
+            // </Button>
+            <FormModal type="delete" table="teacher" id={item.id}/>
           )}
         </div>
       </td>
@@ -129,25 +135,31 @@ const TeacherList = () => {
                 height={21}
               />
             </Button>
-            {role ==="admin"  && <Button
-              variant="contained"
-              className="w-7 h-9 flex items-center justify-center rounded-full bg-darkyellow"
-            >
-              <Image
-                src={"/images/icons/plus.svg"}
-                alt="filter-icon"
-                width={21}
-                height={21}
-              />
-            </Button>}
+            {role === "admin" && (
+              // <Button
+              //   variant="contained"
+              //   className="w-7 h-9 flex items-center justify-center rounded-full bg-darkyellow"
+              // >
+              //   <Image
+              //     src={"/images/icons/plus.svg"}
+              //     alt="filter-icon"
+              //     width={21}
+              //     height={21}
+              //   />
+              // </Button>
+              <FormModal type="create" table="teacher"/>
+            )}
           </div>
         </div>
       </div>
 
       {/* MIDDLE SECTION */}
-      <Table columns={columns} tableRowData={tableRowData} data={teachersData} />
+      <Table
+        columns={columns}
+        tableRowData={tableRowData}
+        data={teachersData}
+      />
 
- 
       {/* BOTTOM SECTION */}
       <Pagination />
     </div>
